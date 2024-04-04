@@ -4,14 +4,14 @@ const buttonclear = document.getElementById("clear-btn")
 let size = ""
 
 
-let mouseDown = false
-document.body.onmouseover = function() {
-  mouseDown = true
-}
+    let mouseDown = false
+    document.body.onmouseover = function() {
+    mouseDown = true
+    }
 
-document.body.onmouseup = function() {
-  mouseDown = false
-}
+    document.body.onmouseup = function() {
+    mouseDown = false
+    }
 
     buttonclear.addEventListener("click", function() {
         const cellReset = document.querySelectorAll(".grid-items")
@@ -40,6 +40,7 @@ document.body.onmouseup = function() {
 }
 
     function checkSize(e) {
+        deleteGridElements()
         if (e > 100) {
             alert("That's Too Large! Please Select A Value Less Than 100")
             canvas(16)
@@ -54,6 +55,13 @@ document.body.onmouseup = function() {
         if (mouseDown) {
         e.target.style.backgroundColor = "black"
         }
+    }
+
+    function deleteGridElements(){
+        const allGrid = document.querySelectorAll(".grid-items");
+        allGrid.forEach((allGrid)=>{
+            allGrid.remove();
+        })
     }
 
  canvas(16)
