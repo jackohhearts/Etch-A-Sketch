@@ -1,5 +1,6 @@
 const container = document.getElementById("container")
 const button = document.getElementById("gridSize-btn")
+const buttonclear = document.getElementById("clear-btn")
 let size = ""
 
 
@@ -11,6 +12,13 @@ document.body.onmouseover = function() {
 document.body.onmouseup = function() {
   mouseDown = false
 }
+
+    buttonclear.addEventListener("click", function() {
+        const cellReset = document.querySelectorAll(".grid-items")
+        cellReset.forEach(cell => cell.style.backgroundColor = "")
+        cellReset.forEach(cell => cell.classList.remove("hover-change"))
+        
+    })    
 
     button.addEventListener("click", function() {
         size = prompt("What size would you like your grid to be?")
@@ -26,7 +34,7 @@ document.body.onmouseup = function() {
         const cell = document.createElement("div")
         cell.addEventListener('mouseover', changeColor)
         cell.addEventListener('mousedown', changeColor)
-        document.getElementById("container").appendChild(cell)
+      
         container.appendChild(cell).className = 'grid-items'
     }
 }
