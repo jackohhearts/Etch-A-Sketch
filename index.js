@@ -21,7 +21,7 @@ let size = "16"
     })    
 
     button.addEventListener("click", function() {
-        size = prompt("What size would you like your grid to be?")
+        size = prompt("What size would you like your grid to be? Please enter a value between 1 and 100.")
         checkSize(size)
     }
     )

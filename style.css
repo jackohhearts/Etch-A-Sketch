@@ -1,9 +1,30 @@
+body {
+    background-color: #88B7B5;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #310A31;
+}
+
 .mainDiv {
     display:flex;
     justify-content: center;
     align-items: center;
     margin: 30px 25px 0px 25px;
     flex-flow: column;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 50px;
+
+  
 }
 
 
@@ -18,7 +39,8 @@
     max-width: 650px;
     aspect-ratio: 1/1;
     border: 2px solid #1C1B1A;
-    background-color: #6f6865;
+    background-color: #F4ECD6;
+    margin-bottom: 200px;
     
 }
 
@@ -52,4 +74,21 @@
     transition: transform .1s ease-in-out;
     color:black;
     font-size: 0px;
+}
+
+button {
+    height: 50px;
+    width: 180px;
+    border: none;
+    border-radius: 8px;
+    background-color: #847996;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 1px;
+    font-weight: bolder;
+}
+
+button:hover {
+    border-radius: 20px;
+    background-color: #A7CAB1;
 }
