@@ -50,20 +50,6 @@ let size = "16"
         
     }
 
-    //function canvas(size) {
-    //    container.style.gridTemplateColumns = `repeat(${size},1fr)`
-
-     //   for(i = 0; i < size * size; i++){
-       //     const cell = document.createElement("div")
-         //   cell.addEventListener('mouseover', changeColor)
-        //    cell.addEventListener('mousedown', changeColor)
-            
-            
-      //      container.appendChild(cell).className = 'grid-items'
-     //       cell.style.flexBasis = `calc(90% / ${size})`
-     //   }
-//}
-
     function checkSize(e) {
         deleteGridElements()
         if (e > 100) {
