@@ -14,9 +14,9 @@ let size = "16"
     }
 
     buttonclear.addEventListener("click", function() {
-        const cellReset = document.querySelectorAll(".grid-items")
-        cellReset.forEach(cell => cell.style.backgroundColor = "")
-        cellReset.forEach(cell => cell.classList.remove("hover-change"))
+        const cellReset = document.querySelectorAll(".grid-cell")
+        cellReset.forEach(gridCell => gridCell.style.backgroundColor = "")
+        cellReset.forEach(gridCell => gridCell.classList.remove("hover-change"))
         
     })    
 
