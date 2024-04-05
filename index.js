@@ -1,7 +1,7 @@
 const container = document.getElementById("container")
 const button = document.getElementById("gridSize-btn")
 const buttonclear = document.getElementById("clear-btn")
-let size = ""
+let size = "16"
 
 
     let mouseDown = false
@@ -26,24 +26,49 @@ let size = ""
     }
     )
 
-    function canvas(size) {
-        container.style.setProperty('--grid-column', size);
-        container.style.setProperty('--grid-row', size);
 
-    for(i = 0; i < size * size; i++){
-        const cell = document.createElement("div")
-        cell.addEventListener('mouseover', changeColor)
-        cell.addEventListener('mousedown', changeColor)
-      
-        container.appendChild(cell).className = 'grid-items'
+    function canvas(xAxis=size,yAxis=size) {
+        
+        
+        for (let i = 0; i < yAxis; i++) {
+            let gridRow = document.createElement("div");
+            gridRow.classList.add("grid-row");
+            for (let k = 0; k < xAxis; k++) {
+                let gridCell = document.createElement("div");
+                gridCell.classList.add("grid-cell");
+                gridRow.addEventListener('mouseover', changeColor)
+        gridRow.addEventListener('mousedown', changeColor)
+        gridCell.addEventListener('mouseover', changeColor)
+        gridCell.addEventListener('mousedown', changeColor)
+                gridRow.appendChild(gridCell);
+                
+            }
+            container.appendChild(gridRow);
+            
+            
+        }
+        
     }
-}
+
+    //function canvas(size) {
+    //    container.style.gridTemplateColumns = `repeat(${size},1fr)`
+
+     //   for(i = 0; i < size * size; i++){
+       //     const cell = document.createElement("div")
+         //   cell.addEventListener('mouseover', changeColor)
+        //    cell.addEventListener('mousedown', changeColor)
+            
+            
+      //      container.appendChild(cell).className = 'grid-items'
+     //       cell.style.flexBasis = `calc(90% / ${size})`
+     //   }
+//}
 
     function checkSize(e) {
         deleteGridElements()
         if (e > 100) {
             alert("That's Too Large! Please Select A Value Less Than 100")
-            canvas(16)
+            canvas(xAxis=16,yAxis=16)
 
         } else {
             canvas(e)
@@ -58,11 +83,15 @@ let size = ""
     }
 
     function deleteGridElements(){
-        const allGrid = document.querySelectorAll(".grid-items");
-        allGrid.forEach((allGrid)=>{
-            allGrid.remove();
+        const allGridRow = document.querySelectorAll(".grid-row");
+        const allGridCell = document.querySelectorAll(".grid-cell");
+        allGridRow.forEach((allGridRow)=>{
+            allGridRow.remove();
+        })
+        allGridCell.forEach((allGridCell)=>{
+            allGridCell.remove();
         })
     }
 
- canvas(16)
+ canvas()
     
