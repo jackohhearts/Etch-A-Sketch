@@ -4,6 +4,9 @@ const buttonclear = document.getElementById("clear-btn")
 let size = "16"
 
 
+
+    canvas()
+
     let mouseDown = false
     document.body.onmouseover = function() {
     mouseDown = true
@@ -64,7 +67,10 @@ let size = "16"
 
     function changeColor(e) {
         if (mouseDown) {
-        e.target.style.backgroundColor = "black"
+            const r = Math.floor(Math.random() * 255)
+            const g = Math.floor(Math.random() * 255)
+            const b = Math.floor(Math.random() * 255)
+        e.target.style.backgroundColor = `RGB(${r}, ${g}, ${b})`
         }
     }
 
@@ -79,5 +85,6 @@ let size = "16"
         })
     }
 
- canvas()
+
+
     
